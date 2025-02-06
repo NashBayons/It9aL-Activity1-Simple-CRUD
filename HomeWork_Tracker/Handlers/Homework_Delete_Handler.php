@@ -4,7 +4,7 @@ include '../database/database.php'; // Ensure this file initializes a `mysqli` c
 // Check if the delete_id parameter is passed
 if (isset($_GET['id'])) {
     $delete_id = $_GET['id'];
-    
+
     // Prepare the DELETE statement
     $stmt = $conn->prepare("DELETE FROM homework WHERE id = ?");
     $stmt->bind_param("i", $delete_id);

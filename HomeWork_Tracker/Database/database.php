@@ -5,7 +5,7 @@ try {
   $host = "localhost";
   $username = "root";
   $password = "";
-  $database = "homework_tracker";
+  $database = "homework_tracker_one";
 
 
   $conn = new mysqli($host, $username, $password, $database);
@@ -15,7 +15,7 @@ try {
     return;
   }
 
-//echo "database connection success";
+  //echo "database connection success";
 
 
 } catch (\Exception $e) {
