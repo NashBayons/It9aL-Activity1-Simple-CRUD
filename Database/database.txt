@@ -1,0 +1,21 @@
+CREATE DATABASE homework_tracker_one;
+
+USE homework_tracker_one;
+
+CREATE TABLE homework (
+    homework_id INT AUTO_INCREMENT PRIMARY KEY,
+    subject_name VARCHAR(255) NOT NULL,
+    homework_description TEXT NOT NULL,
+    deadline DATE NOT NULL,
+    status ENUM('Pending', 'Completed') DEFAULT 'Pending',
+    user_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE, 
+    email VARCHAR(255) NOT NULL UNIQUE,    
+    password VARCHAR(255) NOT NULL,       
+);
